@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1 class="text-center">FakeSolar Inspections</h1>
+
+<div class=redbox>
+ <p *ngFor="let issues of issuesCriticalCount">{{ issues }} Critical Issues</p>
+</div>
+
+<div class=yellowbox>
+ <p *ngFor="let issues of issuesWarningCount">{{ issues }} Warning Issues</p>
+</div>
+
+  <table>
+
+  <tr>
+    <th>Title</th>
+    <th>Inspected By</th>
+    <th>Warning</th>
+    <th>Critical</th>
+  </tr>
+  <tr *ngFor="let row of rows"
+  [ngStyle]="{'background-color':ngstyle_row(row[2], row[3])}">
+    <th>{{row[0]}}</th>
+    <th>{{row[1]}}</th>
+    <th>{{row[2]}}</th>
+    <th>{{row[3]}}</th>
+  </tr>
+
+</table>
+
+
+</body>
+</html>
